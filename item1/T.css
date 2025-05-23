@@ -1,0 +1,61 @@
+/* T.css */
+
+/* Corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* En-tête */
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+header nav a:hover {
+    background-color: #007bff;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Contenu principal */
+main {
+    padding: 20px;
+}
+
+/* Sections */
+h1 {
+    color: #343a40;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
