@@ -2,6 +2,37 @@
 
 
 
+foreach ($products as $product) {
+    echo "<div class='product'>";
+    echo "<h3>" . htmlspecialchars($product["name"]) . "</h3>";
+
+    $originalPrice = $product["price"];
+    $discount = $product["discount"];
+    $finalPrice = $discount !== null ? $originalPrice * (1 - $discount / 100) : $originalPrice;
+
+    echo "<p>Prix : " . number_format($originalPrice / 100, 2, ',', ' ') . " €</p>";
+    echo "<p>Poids : " . $product["weight"] . " g</p>";
+    echo "<p>Remise : " . ($discount !== null ? $discount . "%" : "Aucune") . "</p>";
+    echo "<p><strong>Prix après remise : " . number_format($finalPrice / 100, 2, ',', ' ') . " €</strong></p>";
+    echo "<img src='" . htmlspecialchars($product["picture_url"]) . "' alt='" . htmlspecialchars($product["name"]) . "'>";
+
+    // Formulaire de commande
+    echo "<form method='post' action='commander.php'>";
+    echo "<input type='hidden' name='product_name' value='" . htmlspecialchars($product["name"]) . "'>";
+    echo "<input type='hidden' name='unit_price' value='" . $finalPrice . "'>"; // en centimes
+    echo "<label>Quantité :
+            <input type='number' name='quantity' value='1' min='1'>
+          </label><br><br>";
+    echo "<button type='submit'>Commander</button>";
+    echo "</form>";
+
+    echo "</div>";
+}
+
+
+
+
+
 $products = [
 
     $iphone = [

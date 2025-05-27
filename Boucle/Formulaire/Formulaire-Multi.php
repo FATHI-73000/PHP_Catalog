@@ -1,6 +1,27 @@
 <?php
 
 
+foreach ($products as $product) {
+    echo "<div class='product'>";
+    echo "<h3>" . htmlspecialchars($product["name"]) . "</h3>";
+    echo "<p>Prix : " . number_format($product["price"] / 100, 2, ',', ' ') . " €</p>";
+    echo "<p>Poids : " . $product["weight"] . " g</p>";
+    echo "<p>Remise : " . ($product["discount"] !== null ? $product["discount"] . "%" : "Aucune") . "</p>";
+    echo "<img src='" . htmlspecialchars($product["picture_url"]) . "' alt='" . htmlspecialchars($product["name"]) . "'>";
+
+    // Formulaire de commande
+    echo "<form method='post' action='cart.php'>";
+    echo "<input type='hidden' name='product_name' value='" . htmlspecialchars($product["name"]) . "'>";
+    echo "<label>Quantité :
+            <input type='number' name='quantity' value='1' min='1'>
+          </label><br><br>";
+    echo "<button type='submit'>Commander</button>";
+    echo "</form>";
+
+    echo "</div>";
+}
+
+
 
 $products = [
 
@@ -64,6 +85,8 @@ $products = [
             echo "</div>";
             
         }
+
+       
         ?>
 
         </body>
