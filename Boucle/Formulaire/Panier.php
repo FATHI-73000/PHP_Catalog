@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 // Sécuriser la fonction euro()
 if (!function_exists('euro')) {

@@ -12,9 +12,9 @@ include_once "item1/header.php"; // Inclut le fichier header.php
 include_once "Boucle/Formulaire/Panier.php";
 
 
+include_once "Boucle/Formulaire/catalogue.php";
 
-
-
+include_once "Boucle/Formulaire/commande.php";
 
 
 
