@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 // --- 1. PANIER SIMULÉ (vous pouvez remplacer ceci par $_SESSION plus tard)
 $cart = [
